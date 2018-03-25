@@ -7,6 +7,7 @@ public class SplashScreenLoad : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        DontDestroyOnLoad(gameObject);
         //SceneManager.LoadScene(0);
         Invoke("LoadSplashLevel", 2f);
     }
