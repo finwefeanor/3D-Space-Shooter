@@ -6,6 +6,8 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
 
+    // todo work-out starting speed of playership
+
     [Header("General")]
     [Tooltip("In ms^-1")][SerializeField] float controlSpeed = 4.0f;
     [Tooltip("In m")] [SerializeField] float xPosLimit = 5.0f;
@@ -35,7 +37,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void OnPlayerDeath() 
+    private void OnPlayerDeath() // string referenced
     {
         isControlEnabled = false;
     }

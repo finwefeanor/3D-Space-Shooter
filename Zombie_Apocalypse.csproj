@@ -323,6 +323,8 @@
     <Compile Include="Assets\Asset Packs\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\Asset Packs\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\Asset Packs\Standard Assets\Utility\WaypointProgressTracker.cs" />
+    <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Buttons_test.cs" />
     <Compile Include="Assets\Scripts\CollisionHandler.cs" />
     <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
