@@ -25,10 +25,10 @@ public class CollisionHandler : MonoBehaviour {
     private void StartDeathSequence() 
     {
         print("You are dead. Controls are disabled");
-        gameObject.SendMessage("OnPlayerDeath");
+        gameObject.SendMessage("OnPlayerDeath"); //string referenced to PlayerController script
     }
 
-    void LoadSameLevel() //string referenced
+    void LoadSameLevel() 
     {
         SceneManager.LoadScene(1);
     }
