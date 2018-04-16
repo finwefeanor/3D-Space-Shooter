@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField] GameObject deathFX;
     [SerializeField] Transform parent;
     [SerializeField] int scorePerHit = 12;
+    [SerializeField] int numberOfHits = 8;
     ScoreBoard scoreBoard;
 
     // Use this for initialization
@@ -22,12 +23,24 @@ public class Enemy : MonoBehaviour {
 
     void OnParticleCollision(GameObject other) 
     {
-        //call ScoreHit from ScoreBoard class
-        scoreBoard.ScoreHit(scorePerHit); 
+        ProcessHit();
+        if (numberOfHits <= 0)
+        {
+            KillEnemy();
+        }
+    }
 
+    private void ProcessHit() {
+        //call ScoreHit from ScoreBoard class
+        scoreBoard.ScoreHit(scorePerHit);
+        numberOfHits = numberOfHits - 1;
+        // todo add hit FX and SFX
+    }
+
+    private void KillEnemy() {
         //this creates explosion in the place of enemy ships when they get destroyed
-        GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity); 
+        GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
         fx.transform.parent = parent;
-        Destroy(gameObject);     
+        Destroy(gameObject);
     }
 }
