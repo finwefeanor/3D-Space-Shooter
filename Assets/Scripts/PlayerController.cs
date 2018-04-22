@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour {
     float horizontalThrow, verticalThrow;
     bool isControlEnabled = true;
 
+    void Start() 
+    {
+        
+    }
     // Update is called once per frame
     void Update () 
     {
@@ -43,17 +47,26 @@ public class PlayerController : MonoBehaviour {
     {
         if (CrossPlatformInputManager.GetButton("Fire"))
         {
-            foreach (GameObject gun in guns)
-            {
-                gun.SetActive(true);
-            }         
+            SetGunsActive(true);
         }
         else
         {
-            foreach (GameObject gun in guns)
-            {
-                gun.SetActive(false);
-            }
+            SetGunsActive(false);
+        }
+    }
+
+    private void SetGunsActive(bool isActive) 
+    {
+        foreach (GameObject gun in guns)
+        {
+
+            ParticleSystem particle = gun.GetComponentInChildren<ParticleSystem>();
+            ParticleSystem.EmissionModule em = particle.emission;
+            em.enabled = isActive;
+
+            //shorter way does the same thing
+            //var emissionModule = gun.GetComponentInChildren<ParticleSystem>().emission;
+            //emissionModule.enabled = isActive;  
         }
     }
 
