@@ -278,6 +278,7 @@
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\ScoreBoard.cs" />
     <Compile Include="Assets\Scripts\SelfDestroyer.cs" />
+    <Compile Include="Assets\test\test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Packs\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
