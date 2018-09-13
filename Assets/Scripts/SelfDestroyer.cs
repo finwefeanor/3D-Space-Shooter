@@ -6,7 +6,7 @@ public class SelfDestroyer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Destroy(gameObject, 4f); //destroys the enemy explosion particles after given time
+        Destroy(gameObject, 4f); //destroys the enemy death fx after given time
     
 	}	
 }
